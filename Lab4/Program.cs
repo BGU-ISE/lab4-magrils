@@ -52,5 +52,22 @@ namespace Lab4
             Console.WriteLine("Press any key to close the application");
             Console.ReadKey();
         }
+
+        public static bool Login()
+        {
+            bool login = false;
+            int i = 0;
+            while (i < 3 & !login)
+            {
+                i++;
+                Console.WriteLine("Enter UserID");
+                string userid = Console.ReadLine;
+                Console.WriteLine("Enter UserID");
+                string pswrd = Console.ReadLine;
+                login = (userid.Equals("magrils") & pswrd.Equals("123123"));
+            }
+            return login;
+        }
+            
     }
 }
