@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +11,9 @@ namespace Lab4
 
     class Program
     {
+        private static Hashtable hashtable;
+
+
         //Declare an instance for log4net
         private static readonly ILog Log =
               LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -66,7 +69,15 @@ namespace Lab4
                 string pswrd = Console.ReadLine;
                 login = (userid.Equals("magrils") & pswrd.Equals("123123"));
             }
+
+            if (login){
+                Console.WriteLine("wrong password");
+            }
+            else
+                Console.WriteLine("Hey " + userid);
             return login;
+
+
         }
             
     }
