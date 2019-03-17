@@ -11,7 +11,9 @@ namespace Lab4
 
     class Program
     {
-        private static Hashtable hashtable;
+        private static Hashtable database;
+        
+
 
 
         //Declare an instance for log4net
@@ -20,6 +22,9 @@ namespace Lab4
         static void Main(string[] args)
         {
             ImplementLoggingFuntion();
+
+            database.Add("sharon", "12345");
+            database.Add("sharonM", "12345");
         }
 
         private static void ImplementLoggingFuntion()
@@ -67,7 +72,7 @@ namespace Lab4
                 string userid = Console.ReadLine;
                 Console.WriteLine("Enter UserID");
                 string pswrd = Console.ReadLine;
-                login = (userid.Equals("magrils") & pswrd.Equals("123123"));
+                login = (database[userid]!=null && (string)database[userid]==pswrd);
             }
 
             if (login){
